@@ -14,8 +14,7 @@ class BonusServiceTest {
 
         // вызываем целевой метод
         long actual = service.calculate(amount, registered);
-        // производим проверку (сравниваем ожидаемый и фактический);
-        boolean passed = expected == actual;
+
 
         // выводим результат
         assertEquals(expected, actual);
@@ -27,12 +26,11 @@ class BonusServiceTest {
         // подготавливаем данные
         long amount = 1000_000_60;
         boolean registered = true;
-        long expected = 5000;
+        long expected = 500;
 
         // вызываем целевой метод
         long actual = service.calculate(amount, registered);
-        // производим проверку (сравниваем ожидаемый и фактический);
-        boolean passed = expected == actual;
+
 
         // выводим результат
         assertEquals(expected, actual);
@@ -44,12 +42,11 @@ class BonusServiceTest {
         // подготавливаем данные
         long amount = 1000_60;
         boolean registered = false;
-        long expected = 30;
+        long expected = 10;
 
         // вызываем целевой метод
         long actual = service.calculate(amount, registered);
-        // производим проверку (сравниваем ожидаемый и фактический);
-        boolean passed = expected == actual;
+
 
         // выводим результат
         assertEquals(expected, actual);
