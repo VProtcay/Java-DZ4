@@ -37,12 +37,30 @@ class BonusServiceTest {
 
     }
     @Test
-    void shouldCalculateNoRegistered() {
+    void shouldCalculateNoRegisteredAndBonusOverLimit() {
         BonusService service = new BonusService();
         // подготавливаем данные
         long amount = 1000_60;
         boolean registered = false;
         long expected = 10;
+
+
+        // вызываем целевой метод
+        long actual = service.calculate(amount, registered);
+
+
+        // выводим результат
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCalculateNoRegisteredAndBonusUnderLimit() {
+        BonusService service = new BonusService();
+        // подготавливаем данные
+        long amount = 100_60;
+        boolean registered = false;
+        long expected = 1;
+
 
         // вызываем целевой метод
         long actual = service.calculate(amount, registered);
